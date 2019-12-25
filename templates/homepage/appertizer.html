@@ -1,0 +1,128 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block cssblock%}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'homepage/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="{% static 'homepage/Css-index/style.css' %}">
+{% endblock %}
+    <!-- Header  -->
+
+    <!-- End Header  -->
+{% block content %}
+    <main>
+<section id="appetizer">
+            <div class="tile-drinks text-center">
+                <h3>Khai vị</h3>
+            </div>
+            <div class="container">
+                <div class="row active-by-appetizer">
+                    <!-- single-brand-product-->
+                    <div class="col-xs-12">
+                        <div class="single-brand-product">
+                            <a href=""><img src="{% static 'homepage/images/suon.jpg'%}" alt=""></a>
+                            <h4 class="product-title">Sườn siêu sao 5 miếng</h4>
+                            <p class="price">249.000VNĐ</p>
+                            <h3 class="brand-title text-gray">
+                                <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- End single-brand-product-->
+
+                    <!-- single-brand-product-->
+                    <div class="col-xs-12">
+                        <div class="single-brand-product">
+                            <a href=""><img src="images/ga.jpg" alt=""></a>
+                            <h4 class="product-title">Gà chiên dòn 6 miếng</h4>
+                            <p class="price">129.000VNĐ</p>
+                            <h3 class="brand-title text-gray">
+                                <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- End single-brand-product-->
+
+                    <!-- single-brand-product-->
+                    <div class="col-xs-12">
+                        <div class="single-brand-product">
+                            <a href=""><img src="images/muc.jpg" alt=""></a>
+                            <h4 class="product-title">Giỏ mực chiên giòn</h4>
+                            <p class="price">99.000VNĐ</p>
+                            <h3 class="brand-title text-gray">
+                                <a href="#">Order</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- End single-brand-product-->
+                    <div class="col-xs-12">
+                        <div class="single-brand-product">
+                            <a href=""><img src="images/khoai.jpg" alt=""></a>
+                            <h4 class="product-title">Giỏ khoai tây chiên</h4>
+                            <p class="price">69.000VNĐ</p>
+                            <h3 class="brand-title text-gray">
+                                <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- End single-brand-product-->
+                    <div class="col-xs-12">
+                        <div class="single-brand-product">
+                            <a href=""><img src="images/suon.jpg" alt=""></a>
+                             <h4 class="product-title">Sườn siêu sao 5 miếng</h4>
+                            <p class="price">249.000VNĐ</p>
+                            <h3 class="brand-title text-gray">
+                                <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="single-brand-product">
+                            <a href=""><img src="images/ga.jpg" alt=""></a>
+                            <h4 class="product-title">Gà chiên dòn 6 miếng</h4>
+                            <p class="price">129.000VNĐ</p>
+                            <h3 class="brand-title text-gray">
+                                <a href="#">Order</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="single-brand-product">
+                            <a href=""><img src="images/muc.jpg" alt=""></a>
+                            <h4 class="product-title">Giỏ mực chiên giòn</h4>
+                            <p class="price">99.000VNĐ</p>
+                            <h3 class="brand-title text-gray">
+                                <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="single-brand-product">
+                            <a href=""><img src="images/khoai.jpg" alt=""></a>
+                            <h4 class="product-title">Giỏ khoai tây chiên</h4>
+                            <p class="price">69.000VNĐ</p>
+                            <h3 class="brand-title text-gray">
+                                <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- End single-brand-product-->
+                </div>
+            </div>
+
+        </section>
+    
+        <!-- scrollUp    -->
+    <a href="" id="scrollUp"></a>
+{% endblock %}
+  
+            <!-- Modal  -->
+    {% block jsblock %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{% static 'homepage/js/jquery-3.4.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'homepage/js/plugin.js' %}"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="{% static 'homepage/js/main.js' %}"></script>
+    {% endblock %}

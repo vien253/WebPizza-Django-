@@ -1,0 +1,124 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block cssblock%}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'homepage/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="{% static 'homepage/Css-index/style.css' %}">
+{% endblock %}
+    <!-- Header  -->
+
+    <!-- End Header  -->
+{% block content %}
+ <main>
+<section id="drinks">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 ">
+                        <div class="tile-drinks text-center">
+                            <h3>Mỳ Ý chay</h3>
+                        </div>
+                        <div class="item text-center">
+                            <figure>
+                                <img src="images/cachua.jpg" alt="">
+                                <figcaption>
+                                    <h3 class="title-item">Mỳ Ý chay sốt kem cà chua</h3>
+                                    <p>89.000 VNĐ</p>
+                                </figcaption>
+                                <div class="mb-4">
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
+                                </div>
+                            </figure>
+                        </div>
+                        
+                        <div class="item text-center">
+                            <figure>
+                                <img src="images/kem.jpg" alt="">
+                                <figcaption>
+                                    <h3 class="title-item">Mỳ Ý chay kem tươi</h3>
+                                    <p>89.000 VNĐ</p>
+                                </figcaption>
+                                <div class="mb-4">
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 ">
+                        <div class="tile-drinks text-center">
+                            <h3>Mỳ Ý dòng thịt</h3>
+                        </div>
+                        <div class="item text-center">
+                            <figure>
+                                <img src="images/bobam.jpg" alt="">
+                                <figcaption>
+                                    <h3 class="title-item">Mỳ Ý sốt bò băm</h3>
+                                    <p>99.000 VNĐ</p>
+                                </figcaption>
+                                <div class="mb-4">
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
+                                </div>
+                            </figure>
+                        </div> <!-- End .item   -->
+                        
+                        <div class="item text-center">
+                            <figure>
+                                <img src="images/bacon.jpg" alt="">
+                                <figcaption>
+                                    <h3 class="title-item">Mỳ Ý thịt xông khói</h3>
+                                    <p>99.000 VNĐ</p>
+                                </figcaption>
+                                <div class="mb-4">
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
+                                </div>
+                            </figure>
+                        </div> <!-- End .item   -->
+                    </div>
+                    <div class="col-lg-4 ">
+                        <div class="tile-drinks text-center">
+                            <h3>Mỳ Ý hải sản</h3>
+                        </div>
+                        <div class="item text-center">
+                            <figure>
+                                <img src="images/tom.jpg" alt="">
+                                <figcaption>
+                                    <h3 class="title-item">Mý Ý tôm sốt kem cà chua</h3>
+                                    <p>109.000 VNĐ</p>
+                                </figcaption>
+                                <div class="mb-4">
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
+                                </div>
+                            </figure>
+                        </div>  <!-- End .item   -->
+                        <div class="item text-center">
+                            <figure>
+                                <img src="images/haisan.jpg" alt="">
+                                <figcaption>
+                                    <h3 class="title-item">Mỳ Ý hải sản cao cấp</h3>
+                                    <p>109.000 VNĐ</p>
+                                </figcaption>
+                                <div class="mb-4">
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
+                                </div>
+                            </figure>
+                        </div>   <!-- End .item   -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- scrollUp    -->
+    <a href="" id="scrollUp"></a>
+{% endblock %}
+  
+            <!-- Modal  -->
+    {% block jsblock %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{% static 'homepage/js/jquery-3.4.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'homepage/js/plugin.js' %}"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="{% static 'homepage/js/main.js' %}"></script>
+    {% endblock %}
+       

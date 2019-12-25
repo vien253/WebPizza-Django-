@@ -1,0 +1,94 @@
+ {% extends 'homepage/base.html' %}
+{% load static %}
+{% block cssblock%}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'homepage/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="{% static 'homepage/Css-index/style.css' %}">
+{% endblock %}
+    <!-- Header  -->
+
+    <!-- End Header  -->
+{% block content %}
+ <main>
+    <section id="drinks">
+            <div class="tile-drinks text-center">
+                <h3>Thức uống</h3>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="item text-center">
+                            <figure>
+                                <img src="images/pes.jpg" alt="">
+                                <figcaption>
+                                    <h3 class="title-item">Pepsi</h3>
+                                    <p>20.000 VNĐ</p>
+                                </figcaption>
+                                <div class="mb-4">
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="item text-center">
+                            <figure>
+                                <img src="images/pesl.jpg" alt="">
+                                <figcaption>
+                                    <h3 class="title-item">Pepsi Light</h3>
+                                    <p>20.000 VNĐ</p>
+                                </figcaption>
+                                <div class="mb-4">
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="item text-center">
+                            <figure>
+                                <img src="images/up.jpg" alt="">
+                                <figcaption>
+                                    <h3 class="title-item">7Up</h3>
+                                    <p>20.000 VNĐ</p>
+                                </figcaption>
+                                <div class="mb-4">
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="item text-center">
+                            <figure>
+                                <img src="images/aqua.jpg" alt="">
+                                <figcaption>
+                                    <h3 class="title-item">Aquafina</h3>
+                                    <p>20.000 VNĐ</p>
+                                </figcaption>
+                                <div class="mb-4">
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- scrollUp    -->
+    <a href="" id="scrollUp"></a>
+{% endblock %}
+  
+            <!-- Modal  -->
+    {% block jsblock %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{% static 'homepage/js/jquery-3.4.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'homepage/js/plugin.js' %}"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="{% static 'homepage/js/main.js' %}"></script>
+    {% endblock %}
+     

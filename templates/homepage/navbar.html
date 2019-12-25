@@ -1,0 +1,34 @@
+{% load static %}
+<header id="header">
+        <div class="header-top">
+            <div class="container">
+                <ul class="d-flex justify-content-end align-items-center ml-auto">
+                    <li><a href="">Stores</a></li>
+                    <li><a href="">Create account</a></li>
+                    {% if  user.is_authenticated %}
+                        <li class="active"><a href="{% url 'logout'%}">logout</a></li>              
+                    {% else %}
+                        <li class="active"><a href="{% url 'login'%}">Login</a></li>          
+                    {% endif %}  
+                </ul>
+            </div>
+        </div> <!-- End header-top  -->
+
+
+        <div class="header-mid">
+            <div class="container">
+                <nav>
+                    <a href="{% url 'index'%}">
+                        <img src="{% static 'homepage/images/tongdai.jpg'%}" alt="" class="img-fluid">
+                    </a>
+                    <ul class="menu-top d-flex justify-content-end align-items-center ml-auto">
+                        <li><a href="{% url 'index'%}">Promotions</a></li>
+                        <li><a href="{% url 'pizza'%}">Pizza</a></li>
+                        <li><a href="{% url 'pasta'%}">Pasta</a></li>
+                        <li><a href="{% url 'appertizer'%}">Appertizers</a></li>
+                        <li><a href="{% url 'drink'%}">Beverages & Dessert</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div> <!-- End header-mid  -->
+    </header>

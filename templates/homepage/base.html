@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bài 4</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block cssblock%}
+    {% endblock %}
+</head>
+
+
+<body class="bg-success">
+    {%include 'homepage/navbar.html' %}
+    {% block content %}
+    {% endblock %}
+    {%include 'homepage/footer.html' %}
+    {% block jsblock %}
+    {% endblock %}
+</body>
+</html>

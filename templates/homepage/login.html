@@ -1,0 +1,37 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block cssblock%}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'homepage/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="{% static 'homepage/Css-index/style.css' %}">
+{% endblock %}
+    <!-- Header  -->
+
+    <!-- End Header  -->
+{% block content %}
+<section style="background: linear-gradient( rgba(0,0,0,.5) , rgba(0,0,0,.5)), url({% static 'homepage/images/nenanh.png' %}) no-repeat center center; background-size:cover;height:700px">
+<div  style="width: 40%;margin:auto;padding: 40px ;">
+<form action="" method="post" style="margin-top:100px;background: rgba(0,0,0,.6);padding:40px;">
+		{% csrf_token %}
+	  <div class="form-group">
+	  	<H1 style="color:white">ĐĂNG NHẬP</H1>
+	    <label style="color: white">Tài khoản:</label>
+	    <input type="text" class="form-control" name="un" placeholder="User Name"required>
+	  </div>
+	  <div class="form-group">
+	    <label style="color: white">Mật khẩu:</label>
+	    <input type="password" class="form-control" name="pass" placeholder="Enter password" required>
+	  </div>
+	  {% if name == 'Đăng nhập sai!' %}
+	  <div>
+	  	<label style="color: red">Tài khoản hoặc mật khẩu không đúng!</label>
+		</div>
+	  {% endif %}
+	  <button type="submit" class="btn btn-primary">Xong</button>
+	
+	</form>
+    </div>
+    </section>
+	
+{% endblock %}
