@@ -1,0 +1,31 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block cssblock%}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'homepage/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="{% static 'homepage/Css-index/style.css' %}">
+{% endblock %}
+    <!-- Header  -->
+
+    <!-- End Header  -->
+{% block content %}
+<section style="background: linear-gradient( rgba(0,0,0,.5) , rgba(0,0,0,.5)), url({% static 'homepage/images/nenanh.png' %}) no-repeat center center; background-size:cover;height:900px">
+<div  style="width: 40%;margin:auto;padding: 40px ; ">
+<form action="" method="post" class="form-v" style="margin-top:100px;background: rgba(0,0,0,.6);padding:40px; padding-top: 10px;">
+		{% csrf_token %}
+	  <div class="form-group">
+    <H1 style="color:white">ĐĂNG KÝ</H1>
+	  	{{ form.as_p}}
+	  </div>
+       <div>
+	  	<label style="color: red">{{error}}</label>
+		</div>
+	  
+	  <button type="submit" class="btn btn-primary">Xong</button>
+	
+	</form>
+    </div>
+    </section>
+	
+{% endblock %}
