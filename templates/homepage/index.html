@@ -45,161 +45,77 @@
         <section id="drinks">
             <div class="container">
                 <div class="row">
-                
+                {% if sp %}  
+                {% comment %} truyền thống {% endcomment %}
                     <div class="col-lg-4 ">
-                    {% if sp %}
-                    {% for item in sp.ten_loai%}
-                    {% if item ==  'Pizza truyền thống' %}
-                    
+                        {% for item in sp%}                     
+                        {% if item.ten_loai ==  'Pizza truyền thống' %}
                         <div class="tile-drinks text-center">
-                            <h3>Pizza truyền thống</h3>
-                        </div> 
-                    {% endif %}                      
+                            <h3>{{item.ten_loai}}</h3>
+                        </div>               
                         <div class="item text-center">
                             <figure>
-                                <img src="{% static 'homepage/images/veg.jpg' %}" alt="">
+                                <img src="{{item.anh}}" alt="">
                                 <figcaption>
-                                    <h3 class="title-item">Pizza rau củ</h3>
-                                    <p>159.000 VNĐ</p>
+                                    <h3 class="title-item">{{item.ten_sanpham}}</h3>
+                                    <p>{{item.gia}} VNĐ</p>
 
                                 </figcaption>
-                                <div class="dropdown mb-3">
-                                    <button type="button" class="btn btn-drinks " data-toggle="dropdown">Cỡ nhỏ-Đế dày</button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Cỡ vừa-Đế dày</a>
-                                        <a class="dropdown-item" href="#">Cỡ lớn-Đế dày</a>
-                                    </div>
-                                    <!--ORDER TOAN BAI-->
-                                </div>
                                 <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Mua</a>
                                 </div>
                             </figure>
-                        </div>
+                        </div>                        
+                        {% endif %} 
+                        {%endfor%}
                     </div>
-                
+                {% comment %} dòng thịt {% endcomment %}
                     <div class="col-lg-4 ">
+                        {% for item in sp%}                     
+                        {% if item.ten_loai ==  'Pizza dòng thịt' %}
                         <div class="tile-drinks text-center">
-                            <h3>Pizza dòng thịt</h3>
-                        </div>
+                            <h3>{{item.ten_loai}}</h3>
+                        </div>               
                         <div class="item text-center">
                             <figure>
-                                <img src="{% static 'homepage/images/sup.jpg' %}" alt="">
+                                <img src="{{item.anh}}" alt="">
                                 <figcaption>
-                                    <h3 class="title-item">5 loại thịt đặc biệt</h3>
-                                    <p>179.000 VNĐ</p>
-                                </figcaption>
-                                <div class="dropdown mb-3">
-                                    <button type="button" class="btn btn-drinks " data-toggle="dropdown">Cỡ nhỏ-Đế dày</button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Cỡ vừa-Đế dày</a>
-                                        <a class="dropdown-item" href="#">Cỡ lớn-Đế dày</a>
-                                    </div>
-                                    <!--ORDER TOAN BAI-->
-                                </div>
-                                <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
-                            </figure>
-                        </div>
-                        <div class="item text-center">
-                            <figure>
-                                <img src="{% static 'homepage/images/aloha.jpg' %}" alt="">
-                                <figcaption>
-                                    <h3 class="title-item">Aloha</h3>
-                                    <p>179.000 VNĐ</p>
-                                </figcaption>
-                                <div class="dropdown mb-3">
-                                    <button type="button" class="btn btn-drinks" data-toggle="dropdown">Cỡ nhỏ-Đế dày</button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Cỡ vừa-Đế dày</a>
-                                        <a class="dropdown-item" href="#">Cỡ lớn-Đế dày</a>
-                                    </div>
-                                    <!--ORDER TOAN BAI-->
-                                </div>
-                                <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
-                            </figure>
-                        </div>
-                        <div class="item text-center">
-                            <figure>
-                                <img src="{% static 'homepage/images/deluxe.jpg' %}" alt="">
-                                <figcaption>
-                                    <h3 class="title-item">5 loại thịt đặc biệt</h3>
-                                    <p>179.000 VNĐ</p>
-                                </figcaption>
-                                <div class="dropdown mb-3">
-                                    <button type="button" class="btn btn-drinks" data-toggle="dropdown">Cỡ nhỏ-Đế dày</button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Cỡ vừa-Đế dày</a>
-                                        <a class="dropdown-item" href="#">Cỡ lớn-Đế dày</a>
-                                    </div>
-                                    <!--ORDER TOAN BAI-->
-                                </div>
-                                <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
-                            </figure>
-                        </div>
+                                    <h3 class="title-item">{{item.ten_sanpham}}</h3>
+                                    <p>{{item.gia}} VNĐ</p>
 
+                                </figcaption>
+                                <div class="mb-4">
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Mua</a>
+                                </div>
+                            </figure>
+                        </div>                        
+                        {% endif %} 
+                        {%endfor%}
                     </div>
+                {% comment %} hải sản {% endcomment %}
                     <div class="col-lg-4 ">
+                        {% for item in sp%}                     
+                        {% if item.ten_loai ==  'Pizza hải sản' %}
                         <div class="tile-drinks text-center">
-                            <h3>Pizza hải sản</h3>
-                        </div>
+                            <h3>{{item.ten_loai}}</h3>
+                        </div>               
                         <div class="item text-center">
                             <figure>
-                                <img src="{% static 'homepage/images/pesto.jpg' %}" alt="">
+                                <img src="{{item.anh}}" alt="">
                                 <figcaption>
-                                    <h3 class="title-item">Pesto sốt xanh</h3>
-                                    <p>239.000 VNĐ</p>
+                                    <h3 class="title-item">{{item.ten_sanpham}}</h3>
+                                    <p>{{item.gia}} VNĐ</p>
+
                                 </figcaption>
-                                <div class="dropdown mb-3">
-                                    <button type="button" class="btn btn-drinks " data-toggle="dropdown">Cỡ nhỏ-Đế dày</button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Cỡ vừa-Đế dày</a>
-                                        <a class="dropdown-item" href="#">Cỡ lớn-Đế dày</a>
-                                    </div>
-                                    <!--ORDER TOAN BAI-->
+                                <div class="mb-4">
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Mua</a>
                                 </div>
-                                 <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
                             </figure>
-                        </div>
-                        <div class="item text-center">
-                            <figure>
-                                <img src="{% static 'homepage/images/deluxe.jpg' %}" alt="">
-                                <figcaption>
-                                    <h3 class="title-item">Hải sản cao cấp</h3>
-                                    <p>199.000 VNĐ</p>
-                                </figcaption>
-                                <div class="dropdown mb-3">
-                                    <button type="button" class="btn btn-drinks" data-toggle="dropdown">Cỡ nhỏ-Đế dày</button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Cỡ vừa-Đế dày</a>
-                                        <a class="dropdown-item" href="#">Cỡ lớn-Đế dày</a>
-                                    </div>
-                                    <!--ORDER TOAN BAI-->
-                                </div>
-                                 <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
-                            </figure>
-                        </div>
-                        <div class="item text-center">
-                            <figure>
-                                <img src="{% static 'homepage/images/cock.jpg' %}" alt="">
-                                <figcaption>
-                                    <h3 class="title-item">Hải sản nhiệt đới</h3>
-                                    <p>199.000 VNĐ</p>
-                                </figcaption>
-                                <div class="dropdown mb-3">
-                                    <button type="button" class="btn btn-drinks" data-toggle="dropdown">Cỡ nhỏ-Đế dày</button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Cỡ vừa-Đế dày</a>
-                                        <a class="dropdown-item" href="#">Cỡ lớn-Đế dày</a>
-                                    </div>
-                                    <!--ORDER TOAN BAI-->
-                                </div>
-                                 <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
-                            </figure>
-                        </div> 
-                {%endfor%}
-                {% else %}
-                {% endif %}
+                        </div>                        
+                        {% endif %} 
+                        {%endfor%}
                     </div>
+                {% endif %}
                 </div>
             </div>
         </section>
@@ -209,96 +125,77 @@
         <section id="drinks">
             <div class="container">
                 <div class="row">
+                    {% if sp %}  
+                {% comment %} Mỳ Ý chay {% endcomment %}
                     <div class="col-lg-4 ">
+                        {% for item in sp%}                     
+                        {% if item.ten_loai ==  'Mỳ Ý chay' %}
                         <div class="tile-drinks text-center">
-                            <h3>Mỳ Ý chay</h3>
-                        </div>
+                            <h3>{{item.ten_loai}}</h3>
+                        </div>               
                         <div class="item text-center">
                             <figure>
-                                <img src="{% static 'homepage/images/cachua.jpg' %}" alt="">
+                                <img src="{{item.anh}}" alt="">
                                 <figcaption>
-                                    <h3 class="title-item">Mỳ Ý chay sốt kem cà chua</h3>
-                                    <p>89.000 VNĐ</p>
-                                </figcaption>
-                                <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
-                                </div>
-                            </figure>
-                        </div>
+                                    <h3 class="title-item">{{item.ten_sanpham}}</h3>
+                                    <p>{{item.gia}} VNĐ</p>
 
-                        <div class="item text-center">
-                            <figure>
-                                <img src="{% static 'homepage/images/kem.jpg' %}" alt="">
-                                <figcaption>
-                                    <h3 class="title-item">Mỳ Ý chay kem tươi</h3>
-                                    <p>89.000 VNĐ</p>
                                 </figcaption>
                                 <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Mua</a>
                                 </div>
                             </figure>
-                        </div>
+                        </div>                        
+                        {% endif %} 
+                        {%endfor%}
                     </div>
-
+                {% comment %} Mỳ Ý dòng thịt {% endcomment %}
                     <div class="col-lg-4 ">
+                        {% for item in sp%}                     
+                        {% if item.ten_loai ==  'Mỳ Ý dòng thịt' %}
                         <div class="tile-drinks text-center">
-                            <h3>Mỳ Ý dòng thịt</h3>
-                        </div>
+                            <h3>{{item.ten_loai}}</h3>
+                        </div>               
                         <div class="item text-center">
                             <figure>
-                                <img src="{% static 'homepage/images/bobam.jpg' %}" alt="">
+                                <img src="{{item.anh}}" alt="">
                                 <figcaption>
-                                    <h3 class="title-item">Mỳ Ý sốt bò băm</h3>
-                                    <p>99.000 VNĐ</p>
-                                </figcaption>
-                                <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
-                                </div>
-                            </figure>
-                        </div> <!-- End .item   -->
+                                    <h3 class="title-item">{{item.ten_sanpham}}</h3>
+                                    <p>{{item.gia}} VNĐ</p>
 
-                        <div class="item text-center">
-                            <figure>
-                                <img src="{% static 'homepage/images/bacon.jpg' %}" alt="">
-                                <figcaption>
-                                    <h3 class="title-item">Mỳ Ý thịt xông khói</h3>
-                                    <p>99.000 VNĐ</p>
                                 </figcaption>
                                 <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Mua</a>
                                 </div>
                             </figure>
-                        </div> <!-- End .item   -->
+                        </div>                        
+                        {% endif %} 
+                        {%endfor%}
                     </div>
+                {% comment %} Mỳ ý hải sản {% endcomment %}
                     <div class="col-lg-4 ">
+                        {% for item in sp%}                     
+                        {% if item.ten_loai ==  'Mỳ Ý hải sản' %}
                         <div class="tile-drinks text-center">
-                            <h3>Mỳ Ý hải sản</h3>
-                        </div>
+                            <h3>{{item.ten_loai}}</h3>
+                        </div>               
                         <div class="item text-center">
                             <figure>
-                                <img src="{% static 'homepage/images/tom.jpg' %}" alt="">
+                                <img src="{{item.anh}}" alt="">
                                 <figcaption>
-                                    <h3 class="title-item">Mý Ý tôm sốt kem cà chua</h3>
-                                    <p>109.000 VNĐ</p>
+                                    <h3 class="title-item">{{item.ten_sanpham}}</h3>
+                                    <p>159.000 VNĐ</p>
+
                                 </figcaption>
                                 <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Mua</a>
                                 </div>
                             </figure>
-                        </div>  <!-- End .item   -->
-                        <div class="item text-center">
-                            <figure>
-                                <img src="{% static 'homepage/images/haisan.jpg' %}" alt="">
-                                <figcaption>
-                                    <h3 class="title-item">Mỳ Ý hải sản cao cấp</h3>
-                                    <p>109.000 VNĐ</p>
-                                </figcaption>
-                                <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
-                                </div>
-                            </figure>
-                        </div>   <!-- End .item   -->
+                        </div>                        
+                        {% endif %} 
+                        {%endfor%}
                     </div>
+                    {%endif%}
                 </div>
             </div>
         </section>
@@ -306,17 +203,20 @@
 
         <!--  #appetizer   -->
         <section id="appetizer">
+        {% if sp %} 
             <div class="tile-drinks text-center">
                 <h3>Khai vị</h3>
             </div>
             <div class="container">
                 <div class="row active-by-appetizer">
+                {% for item in sp%}                     
+                    {% if item.ten_loai ==  'Khai vị' %}
                     <!-- single-brand-product-->
                     <div class="col-xs-12">
                         <div class="single-brand-product">
-                            <a href=""><img src="{% static 'homepage/images/suon.jpg' %}" alt=""></a>
-                            <h4 class="product-title">Sườn siêu sao 5 miếng</h4>
-                            <p class="price">249.000VNĐ</p>
+                            <a href=""><img src="{{item.anh}}" alt=""></a>
+                            <h4 class="product-title">{{item.ten_sanpham}}</h4>
+                            <p class="price">{{item.gia}} VNĐ</p>
                             <h3 class="brand-title text-gray">
                                 <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
                             </h3>
@@ -324,86 +224,12 @@
                     </div>
                     <!-- End single-brand-product-->
 
-                    <!-- single-brand-product-->
-                    <div class="col-xs-12">
-                        <div class="single-brand-product">
-                            <a href=""><img src="{% static 'homepage/images/ga.jpg' %}" alt=""></a>
-                            <h4 class="product-title">Gà chiên dòn 6 miếng</h4>
-                            <p class="price">129.000VNĐ</p>
-                            <h3 class="brand-title text-gray">
-                                <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
-                            </h3>
-                        </div>
-                    </div>
-                    <!-- End single-brand-product-->
-
-                    <!-- single-brand-product-->
-                    <div class="col-xs-12">
-                        <div class="single-brand-product">
-                            <a href=""><img src="{% static 'homepage/images/muc.jpg' %}" alt=""></a>
-                            <h4 class="product-title">Giỏ mực chiên giòn</h4>
-                            <p class="price">99.000VNĐ</p>
-                            <h3 class="brand-title text-gray">
-                                <a href="#">Order</a>
-                            </h3>
-                        </div>
-                    </div>
-                    <!-- End single-brand-product-->
-                    <div class="col-xs-12">
-                        <div class="single-brand-product">
-                            <a href=""><img src="{% static 'homepage/images/khoai.jpg' %}" alt=""></a>
-                            <h4 class="product-title">Giỏ khoai tây chiên</h4>
-                            <p class="price">69.000VNĐ</p>
-                            <h3 class="brand-title text-gray">
-                                <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
-                            </h3>
-                        </div>
-                    </div>
-                    <!-- End single-brand-product-->
-                    <div class="col-xs-12">
-                        <div class="single-brand-product">
-                            <a href=""><img src="{% static 'homepage/images/suon.jpg' %}" alt=""></a>
-                             <h4 class="product-title">Sườn siêu sao 5 miếng</h4>
-                            <p class="price">249.000VNĐ</p>
-                            <h3 class="brand-title text-gray">
-                                <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="col-xs-12">
-                        <div class="single-brand-product">
-                            <a href=""><img src="{% static 'homepage/images/ga.jpg' %}" alt=""></a>
-                            <h4 class="product-title">Gà chiên dòn 6 miếng</h4>
-                            <p class="price">129.000VNĐ</p>
-                            <h3 class="brand-title text-gray">
-                                <a href="#">Order</a>
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="col-xs-12">
-                        <div class="single-brand-product">
-                            <a href=""><img src="{% static 'homepage/images/muc.jpg' %}" alt=""></a>
-                            <h4 class="product-title">Giỏ mực chiên giòn</h4>
-                            <p class="price">99.000VNĐ</p>
-                            <h3 class="brand-title text-gray">
-                                <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="col-xs-12">
-                        <div class="single-brand-product">
-                            <a href=""><img src="{% static 'homepage/images/khoai.jpg' %}" alt=""></a>
-                            <h4 class="product-title">Giỏ khoai tây chiên</h4>
-                            <p class="price">69.000VNĐ</p>
-                            <h3 class="brand-title text-gray">
-                                <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
-                            </h3>
-                        </div>
-                    </div>
+                     {% endif %} 
+                        {%endfor%}
                     <!-- End single-brand-product-->
                 </div>
             </div>
-
+            {% endif %} 
         </section>
         <!-- End  #appetizer   -->
 
@@ -565,13 +391,14 @@
             </div>
         </div> <!-- End blog-product -->
     </main>
+    {% comment %} Đơn hàng {% endcomment %}
     <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
 
                     <!-- modal-header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Xác nhận thêm vào giỏ hàng của bạn</h4>
+                    <h4 class="modal-title">Xác nhận mua</h4>
                     <button type="button" class="close" data-dismiss="modal">
                         <span aria-hidden="true">x</span>
                     </button>
@@ -579,34 +406,18 @@
 
                      <!-- modal-body -->
                 <div class="modal-body">
-                <span class="text-center d-flex justify-content-center">Thời gian nhận hàng</span>
+                <form action="/action_page.php">
+                        Thời gian nhận: <input type="number" name="quantity" min="15'" max="150'"> phút
+                
+                </form>
                 <div class="dropdown mt-3 nav nav-pills mx-auto ">
-                    <button type="button" class="btn btn-outline-primary dropdown-toggle nav-item " data-toggle="dropdown">Chọn thời gian nhận hàng sau</button>
-                    <div class="dropdown-menu ">
-                        <a class="dropdown-item" href="#">30'</a>
-                        <a class="dropdown-item" href="#">45'</a>
-                        <a class="dropdown-item" href="#">60'</a>
-                        <a class="dropdown-item" href="#">1:15'</a>
-                        <a class="dropdown-item" href="#">1:30'</a>
-                        <a class="dropdown-item" href="#">1:45</a>
-                        <a class="dropdown-item" href="#">2:00</a>
-                        <a class="dropdown-item" href="#">2:15</a>
-                        <a class="dropdown-item" href="#">2:30</a>
-                        <a class="dropdown-item" href="#">2:45</a>
-                        <a class="dropdown-item" href="#">3:00</a>
-                    </div>
-                    <div class="nav-item ml-5">
-                        <button type="button" class="btn btn-outline-danger">Ngay bây giờ</button>
-                    </div>
+                
                 </div>
                 </div>
-                <span class="text-center d-flex justify-content-center">Thời gian nhận hàng</span>
+                <span class="text-center d-flex justify-content-center">Quý khách vui lòng điền thông tin</span>
                 <form action="#" class="form-modal">
-                    <input type="text" placeholder="Họ và tên" id="usr" name="username">
-
-                    <input type="text" placeholder="Địa chỉ" id="mail" name="email">
-
-                    <input type="text" placeholder="Số điện thoại" id="usr" name="number">
+                    <input type="text" placeholder="Họ và tên" id="usr" name="ten">
+                    <input type="text" placeholder="Số điện thoại" id="usr" name="sdt">
                 </form>
 
                 <div class="modal-footer mx-auto">
@@ -624,7 +435,7 @@
 
                     <!-- modal-header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Xác nhận thêm vào giỏ hàng của bạn</h4>
+                    <h4 class="modal-title">Xác nhận mua</h4>
                     <button type="button" class="close" data-dismiss="modal">
                         <span aria-hidden="true">x</span>
                     </button>
@@ -633,27 +444,8 @@
                      <!-- modal-body -->
                 <div class="modal-body">
                 <span class="text-center d-flex justify-content-center">Thời gian nhận hàng</span>
-                <div class="dropdown mt-3 nav nav-pills mx-auto ">
-                    <button type="button" class="btn btn-outline-primary dropdown-toggle nav-item " data-toggle="dropdown">Chọn thời gian nhận hàng sau</button>
-                    <div class="dropdown-menu ">
-                        <a class="dropdown-item" href="#">30'</a>
-                        <a class="dropdown-item" href="#">45'</a>
-                        <a class="dropdown-item" href="#">60'</a>
-                        <a class="dropdown-item" href="#">1:15'</a>
-                        <a class="dropdown-item" href="#">1:30'</a>
-                        <a class="dropdown-item" href="#">1:45</a>
-                        <a class="dropdown-item" href="#">2:00</a>
-                        <a class="dropdown-item" href="#">2:15</a>
-                        <a class="dropdown-item" href="#">2:30</a>
-                        <a class="dropdown-item" href="#">2:45</a>
-                        <a class="dropdown-item" href="#">3:00</a>
-                    </div>
-                    <div class="nav-item ml-5">
-                        <button type="button" class="btn btn-outline-danger">Ngay bây giờ</button>
-                    </div>
                 </div>
-                </div>
-                <span class="text-center d-flex justify-content-center">Thời gian nhận hàng</span>
+                <span class="text-center d-flex justify-content-center">Quý khách vui lòng điền thông tin</span>
                 <form action="#" class="form-modal">
                     <input type="text" placeholder="Họ và tên" id="usr" name="username">
 

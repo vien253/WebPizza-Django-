@@ -1,15 +1,15 @@
 {% load static %}
-<header id="header">
+<header id="header" class="py-3">
         <div class="header-top">
-            <div class="container">
-                <ul class="d-flex justify-content-end align-items-center ml-auto">
-                    <li><a href="">Stores</a></li>
-                    <li><a href="">Create account</a></li>
+            <div class="container ">
+                <ul class="d-flex justify-content-end align-items-center ml-auto ">
                     {% if  user.is_authenticated %}
-                        <li class="active"><a href="{% url 'logout'%}">logout</a></li>              
+                        <li><span class="text-white h5"> Xin chào {{user.username}}</span> &emsp; &emsp;</li>
+                        <li class="active"><a href="{% url 'logout'%}">Đăng xuất</a></li>              
                     {% else %}
-                        <li class="active"><a href="{% url 'login'%}">Login</a></li>          
-                    {% endif %}  
+                        <li class="active"><a href="{% url 'login'%}">Đăng nhập</a></li>          
+                    {% endif %} 
+                     <li class="active"><a href="{% url 'dangky'%}">Đăng ký</a></li>
                 </ul>
             </div>
         </div> <!-- End header-top  -->

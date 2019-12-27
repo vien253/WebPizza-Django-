@@ -2,14 +2,39 @@ from django.shortcuts import render,redirect
 from  django.views import View
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import SanPham
+from core.models import SanPham
+from core.forms import SignUpForm
+from django.contrib.auth.forms import UserCreationForm
+# Create your views here.
+
+
+
 # Create your views here.
 
 class HomeView(View):
     def get(self,request):
         sp = SanPham.objects.all()
         context = {"sp": sp}
-        return render(request,'homepage/index.html',context)          
+        return render(request,'homepage/index.html',context)   
+class dangkyView(View):
+    def get(self,request):
+        form =SignUpForm()
+        context = {'form': form}
+        return render(request, 'homepage/dangky.html',context)    
+    def post(self,request):
+        """Register a new user."""
+        # Process completed form.
+        form = UserCreationForm(data=request.POST)
+
+        if form.is_valid():
+            new_user = form.save()
+            # Log the user in and then redirect to home page.
+            login(request, new_user)
+            return redirect('index')
+        # Display a blink or invalid form
+        context = {'form': form}
+        return render(request, 'homepage/dangky.html', context)
+
 class loginView(View):
     def get(self,request):
         return render(request, 'homepage/login.html')
