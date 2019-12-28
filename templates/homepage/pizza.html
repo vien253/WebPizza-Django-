@@ -25,7 +25,7 @@
                         </div>               
                         <div class="item text-center">
                             <figure>
-                                <img src="{{item.anh}}" alt="">
+                                <img src="/{{item.anh}}" alt="">
                                 <figcaption>
                                     <h3 class="title-item">{{item.ten_sanpham}}</h3>
                                     <p>{{item.gia}} VNĐ</p>
@@ -48,7 +48,7 @@
                         </div>               
                         <div class="item text-center">
                             <figure>
-                                <img src="{{item.anh}}" alt="">
+                                <img src="/{{item.anh}}" alt="">
                                 <figcaption>
                                     <h3 class="title-item">{{item.ten_sanpham}}</h3>
                                     <p>{{item.gia}} VNĐ</p>
@@ -71,7 +71,7 @@
                         </div>               
                         <div class="item text-center">
                             <figure>
-                                <img src="{{item.anh}}" alt="">
+                                <img src="/{{item.anh}}" alt="">
                                 <figcaption>
                                     <h3 class="title-item">{{item.ten_sanpham}}</h3>
                                     <p>{{item.gia}} VNĐ</p>
@@ -91,13 +91,49 @@
         </section>
     </main>
         <!-- scrollUp    -->
+          {% comment %} Đơn hàng {% endcomment %}
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                    <!-- modal-header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Xác nhận mua</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">x</span>
+                    </button>
+                </div>
+
+                     <!-- modal-body -->
+                <div class="modal-body">
+                <form action="/action_page.php">
+                        Thời gian nhận: <input type="number" name="quantity" min="15'" max="150'"> phút
+                
+                </form>
+                <div class="dropdown mt-3 nav nav-pills mx-auto ">
+                
+                </div>
+                </div>
+                <span class="text-center d-flex justify-content-center">Quý khách vui lòng điền thông tin</span>
+                <form action="#" class="form-modal">
+                    <input type="text" placeholder="Họ và tên" id="usr" name="ten">
+                    <input type="text" placeholder="Số điện thoại" id="usr" name="sdt">
+                </form>
+
+                <div class="modal-footer mx-auto">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Xác nhận</button>
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <a href="" id="scrollUp"></a>
 {% endblock %}
   
             <!-- Modal  -->
     {% block jsblock %}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="{% static 'homepage/js/jquery-3.4.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'homepage/js/plugin.js' %}"></script>

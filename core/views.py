@@ -54,10 +54,14 @@ class logoutView(View):
 
 class appertizerView(View):
     def get(self,request):
-        return render(request,template_name='homepage/appertizer.html')  
+        sp1 = SanPham.objects.all()
+        context = {"sp": sp1}
+        return render(request,'homepage/appertizer.html',context)  
 class drinkView(View):
     def get(self,request):
-        return render(request,template_name='homepage/drink.html')  
+        sp1 = SanPham.objects.all()
+        context = {"sp": sp1}
+        return render(request,'homepage/drink.html',context)  
 class pizzaView(View):
     def get(self,request):
         sp1 = SanPham.objects.all()
@@ -65,5 +69,7 @@ class pizzaView(View):
         return render(request,'homepage/pizza.html',context)
 class pastaView(View):
     def get(self,request):
-        return render(request,template_name='homepage/pasta.html')    
+        sp1 = SanPham.objects.all()
+        context = {"sp": sp1} 
+        return render(request,'homepage/pasta.html',context)    
           

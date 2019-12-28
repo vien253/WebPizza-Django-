@@ -11,73 +11,75 @@
     <!-- End Header  -->
 {% block content %}
  <main>
-    <section id="drinks">
+    <!--  #drinks   -->
+        <section id="drinks">
             <div class="tile-drinks text-center">
                 <h3>Thức uống</h3>
             </div>
+             {% if sp %}  
             <div class="container">
                 <div class="row">
+                {% for item in sp%}                     
+                    {% if item.ten_loai ==  'Thức uống' %}
                     <div class="col-lg-3">
                         <div class="item text-center">
                             <figure>
-                                <img src="images/pes.jpg" alt="">
+                                <img src="/{{item.anh}}" alt="">
                                 <figcaption>
-                                    <h3 class="title-item">Pepsi</h3>
-                                    <p>20.000 VNĐ</p>
+                                    <h3 class="title-item">{{item.ten_sanpham}}</h3>
+                                    <p>{{item.gia}} VNĐ</p>
                                 </figcaption>
                                 <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Mua</a>
                                 </div>
                             </figure>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="item text-center">
-                            <figure>
-                                <img src="images/pesl.jpg" alt="">
-                                <figcaption>
-                                    <h3 class="title-item">Pepsi Light</h3>
-                                    <p>20.000 VNĐ</p>
-                                </figcaption>
-                                <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
-                                </div>
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="item text-center">
-                            <figure>
-                                <img src="images/up.jpg" alt="">
-                                <figcaption>
-                                    <h3 class="title-item">7Up</h3>
-                                    <p>20.000 VNĐ</p>
-                                </figcaption>
-                                <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
-                                </div>
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="item text-center">
-                            <figure>
-                                <img src="images/aqua.jpg" alt="">
-                                <figcaption>
-                                    <h3 class="title-item">Aquafina</h3>
-                                    <p>20.000 VNĐ</p>
-                                </figcaption>
-                                <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
-                                </div>
-                            </figure>
-                        </div>
-                    </div>
+                    {% endif %} 
+                        {%endfor%}
                 </div>
             </div>
-
+                    {% endif %} 
         </section>
+        <!-- End  #drinks   -->
+
         <!-- scrollUp    -->
+          {% comment %} Đơn hàng {% endcomment %}
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                    <!-- modal-header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Xác nhận mua</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">x</span>
+                    </button>
+                </div>
+
+                     <!-- modal-body -->
+                <div class="modal-body">
+                <form action="/action_page.php">
+                        Thời gian nhận: <input type="number" name="quantity" min="15'" max="150'"> phút
+                
+                </form>
+                <div class="dropdown mt-3 nav nav-pills mx-auto ">
+                
+                </div>
+                </div>
+                <span class="text-center d-flex justify-content-center">Quý khách vui lòng điền thông tin</span>
+                <form action="#" class="form-modal">
+                    <input type="text" placeholder="Họ và tên" id="usr" name="ten">
+                    <input type="text" placeholder="Số điện thoại" id="usr" name="sdt">
+                </form>
+
+                <div class="modal-footer mx-auto">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Xác nhận</button>
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <a href="" id="scrollUp"></a>
 {% endblock %}
   

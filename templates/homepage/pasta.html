@@ -11,103 +11,122 @@
     <!-- End Header  -->
 {% block content %}
  <main>
-<section id="drinks">
+        <!--  #drinks   -->
+        <section id="drinks">
             <div class="container">
                 <div class="row">
+                    {% if sp %}  
+                {% comment %} Mỳ Ý chay {% endcomment %}
                     <div class="col-lg-4 ">
+                        {% for item in sp%}                     
+                        {% if item.ten_loai ==  'Mỳ Ý chay' %}
                         <div class="tile-drinks text-center">
-                            <h3>Mỳ Ý chay</h3>
-                        </div>
+                            <h3>{{item.ten_loai}}</h3>
+                        </div>               
                         <div class="item text-center">
                             <figure>
-                                <img src="images/cachua.jpg" alt="">
+                                <img src="/{{item.anh}}" alt="">
                                 <figcaption>
-                                    <h3 class="title-item">Mỳ Ý chay sốt kem cà chua</h3>
-                                    <p>89.000 VNĐ</p>
-                                </figcaption>
-                                <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
-                                </div>
-                            </figure>
-                        </div>
-                        
-                        <div class="item text-center">
-                            <figure>
-                                <img src="images/kem.jpg" alt="">
-                                <figcaption>
-                                    <h3 class="title-item">Mỳ Ý chay kem tươi</h3>
-                                    <p>89.000 VNĐ</p>
-                                </figcaption>
-                                <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
-                                </div>
-                            </figure>
-                        </div>
-                    </div>
+                                    <h3 class="title-item">{{item.ten_sanpham}}</h3>
+                                    <p>{{item.gia}} VNĐ</p>
 
-                    <div class="col-lg-4 ">
-                        <div class="tile-drinks text-center">
-                            <h3>Mỳ Ý dòng thịt</h3>
-                        </div>
-                        <div class="item text-center">
-                            <figure>
-                                <img src="images/bobam.jpg" alt="">
-                                <figcaption>
-                                    <h3 class="title-item">Mỳ Ý sốt bò băm</h3>
-                                    <p>99.000 VNĐ</p>
                                 </figcaption>
                                 <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Mua</a>
                                 </div>
                             </figure>
-                        </div> <!-- End .item   -->
-                        
-                        <div class="item text-center">
-                            <figure>
-                                <img src="images/bacon.jpg" alt="">
-                                <figcaption>
-                                    <h3 class="title-item">Mỳ Ý thịt xông khói</h3>
-                                    <p>99.000 VNĐ</p>
-                                </figcaption>
-                                <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
-                                </div>
-                            </figure>
-                        </div> <!-- End .item   -->
+                        </div>                        
+                        {% endif %} 
+                        {%endfor%}
                     </div>
+                {% comment %} Mỳ Ý dòng thịt {% endcomment %}
                     <div class="col-lg-4 ">
+                        {% for item in sp%}                     
+                        {% if item.ten_loai ==  'Mỳ Ý dòng thịt' %}
                         <div class="tile-drinks text-center">
-                            <h3>Mỳ Ý hải sản</h3>
-                        </div>
+                            <h3>{{item.ten_loai}}</h3>
+                        </div>               
                         <div class="item text-center">
                             <figure>
-                                <img src="images/tom.jpg" alt="">
+                                <img src="/{{item.anh}}" alt="">
                                 <figcaption>
-                                    <h3 class="title-item">Mý Ý tôm sốt kem cà chua</h3>
-                                    <p>109.000 VNĐ</p>
+                                    <h3 class="title-item">{{item.ten_sanpham}}</h3>
+                                    <p>{{item.gia}} VNĐ</p>
+
                                 </figcaption>
                                 <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Mua</a>
                                 </div>
                             </figure>
-                        </div>  <!-- End .item   -->
-                        <div class="item text-center">
-                            <figure>
-                                <img src="images/haisan.jpg" alt="">
-                                <figcaption>
-                                    <h3 class="title-item">Mỳ Ý hải sản cao cấp</h3>
-                                    <p>109.000 VNĐ</p>
-                                </figcaption>
-                                <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>  
-                                </div>
-                            </figure>
-                        </div>   <!-- End .item   -->
+                        </div>                        
+                        {% endif %} 
+                        {%endfor%}
                     </div>
+                {% comment %} Mỳ ý hải sản {% endcomment %}
+                    <div class="col-lg-4 ">
+                        {% for item in sp%}                     
+                        {% if item.ten_loai ==  'Mỳ Ý hải sản' %}
+                        <div class="tile-drinks text-center">
+                            <h3>{{item.ten_loai}}</h3>
+                        </div>               
+                        <div class="item text-center">
+                            <figure>
+                                <img src="/{{item.anh}}" alt="">
+                                <figcaption>
+                                    <h3 class="title-item">{{item.ten_sanpham}}</h3>
+                                    <p>159.000 VNĐ</p>
+
+                                </figcaption>
+                                <div class="mb-4">
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Mua</a>
+                                </div>
+                            </figure>
+                        </div>                        
+                        {% endif %} 
+                        {%endfor%}
+                    </div>
+                    {%endif%}
                 </div>
             </div>
         </section>
+        <!-- End  #drinks   -->
         <!-- scrollUp    -->
+          {% comment %} Đơn hàng {% endcomment %}
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                    <!-- modal-header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Xác nhận mua</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">x</span>
+                    </button>
+                </div>
+
+                     <!-- modal-body -->
+                <div class="modal-body">
+                <form action="/action_page.php">
+                        Thời gian nhận: <input type="number" name="quantity" min="15'" max="150'"> phút
+                
+                </form>
+                <div class="dropdown mt-3 nav nav-pills mx-auto ">
+                
+                </div>
+                </div>
+                <span class="text-center d-flex justify-content-center">Quý khách vui lòng điền thông tin</span>
+                <form action="#" class="form-modal">
+                    <input type="text" placeholder="Họ và tên" id="usr" name="ten">
+                    <input type="text" placeholder="Số điện thoại" id="usr" name="sdt">
+                </form>
+
+                <div class="modal-footer mx-auto">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Xác nhận</button>
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <a href="" id="scrollUp"></a>
 {% endblock %}
   
