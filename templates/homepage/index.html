@@ -218,7 +218,7 @@
                             <h4 class="product-title">{{item.ten_sanpham}}</h4>
                             <p class="price">{{item.gia}} VNĐ</p>
                             <h3 class="brand-title text-gray">
-                                <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
+                                <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview">Mua</a>
                             </h3>
                         </div>
                     </div>
@@ -238,67 +238,30 @@
             <div class="tile-drinks text-center">
                 <h3>Thức uống</h3>
             </div>
+             {% if sp %}  
             <div class="container">
                 <div class="row">
+                {% for item in sp%}                     
+                    {% if item.ten_loai ==  'Thức uống' %}
                     <div class="col-lg-3">
                         <div class="item text-center">
                             <figure>
-                                <img src="{% static 'homepage/images/pes.jpg' %}" alt="">
+                                <img src="{{item.anh}}" alt="">
                                 <figcaption>
-                                    <h3 class="title-item">Pepsi</h3>
-                                    <p>20.000 VNĐ</p>
+                                    <h3 class="title-item">{{item.ten_sanpham}}</h3>
+                                    <p>{{item.gia}} VNĐ</p>
                                 </figcaption>
                                 <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
+                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Mua</a>
                                 </div>
                             </figure>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="item text-center">
-                            <figure>
-                                <img src="{% static 'homepage/images/pesl.jpg' %}" alt="">
-                                <figcaption>
-                                    <h3 class="title-item">Pepsi Light</h3>
-                                    <p>20.000 VNĐ</p>
-                                </figcaption>
-                                <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
-                                </div>
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="item text-center">
-                            <figure>
-                                <img src="{% static 'homepage/images/up.jpg' %}" alt="">
-                                <figcaption>
-                                    <h3 class="title-item">7Up</h3>
-                                    <p>20.000 VNĐ</p>
-                                </figcaption>
-                                <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
-                                </div>
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="item text-center">
-                            <figure>
-                                <img src="{% static 'homepage/images/aqua.jpg' %}" alt="">
-                                <figcaption>
-                                    <h3 class="title-item">Aquafina</h3>
-                                    <p>20.000 VNĐ</p>
-                                </figcaption>
-                                <div class="mb-4">
-                                     <a href="#" class="btn-drinks" data-toggle="modal"  data-target="#productModal" title="Quickview">Order</a>
-                                </div>
-                            </figure>
-                        </div>
-                    </div>
+                    {% endif %} 
+                        {%endfor%}
                 </div>
             </div>
-
+                    {% endif %} 
         </section>
         <!-- End  #drinks   -->
 
@@ -471,7 +434,7 @@
             <!-- Modal  -->
     {% block jsblock %}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="{% static 'homepage/js/jquery-3.4.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'homepage/js/plugin.js' %}"></script>

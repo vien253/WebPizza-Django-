@@ -60,7 +60,9 @@ class drinkView(View):
         return render(request,template_name='homepage/drink.html')  
 class pizzaView(View):
     def get(self,request):
-        return render(request,template_name='homepage/pizza.html')
+        sp1 = SanPham.objects.all()
+        context = {"sp": sp1} 
+        return render(request,'homepage/pizza.html',context)
 class pastaView(View):
     def get(self,request):
         return render(request,template_name='homepage/pasta.html')    
